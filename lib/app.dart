@@ -10,6 +10,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/custom_animation.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'base/theme/controller.dart';
@@ -34,6 +35,16 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
           debugShowCheckedModeBanner: false,
           initialRoute: RouteName.INITAL,
           getPages: AppRouter.pages,
+          locale: const Locale('zh', 'CN'),
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate, //iOS
+          ],
+          supportedLocales: const [
+            Locale('zh', 'CN'),
+            Locale('en', 'US'),
+          ],
           builder: (context, widget) {
             return MediaQuery(
               //设置文字大小不随系统设置改变
@@ -45,7 +56,6 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
               ),
             );
           },
-          defaultTransition: Transition.rightToLeftWithFade,
           home: child,
           initialBinding: AppBindings(),
           navigatorKey: navigatorKey,

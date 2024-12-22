@@ -25,9 +25,9 @@ class UserDemo extends BaseCommonView<UserLogic> {
       builder: (_) => creatCommonView(
           logic,
           (con) => MyPage(children: [
-                Text('UserDemo'),
+                const Text('UserDemo'),
                 AppCard(
-                  child: Text('UserDemo Page'),
+                  child: const Text('UserDemo Page'),
                   onTap: () {
                     Get.toNamed(RouteName.DEMOLIST);
                   },

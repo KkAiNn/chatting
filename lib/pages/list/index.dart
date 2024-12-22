@@ -16,23 +16,23 @@ import 'package:get/get.dart';
 import '../../routes/index.dart';
 import '../../widgets/card.dart';
 
-class ListDemo extends BaseCommonView<ListController> {
+class ListDemo extends BaseCommonView<ListLogic> {
   ListDemo({super.key});
-  final logic = Get.find<ListController>();
+  final logic = Get.find<ListLogic>();
 
   @override
   Widget buildContent() {
-    return GetBuilder<ListController>(
+    return GetBuilder<ListLogic>(
       builder: (_) => creatCommonView(
           logic,
           (con) => Column(
                 children: [
-                  Text('ListDemo'),
-                  Text('ListDemo2'),
+                  const Text('ListDemo'),
+                  const Text('ListDemo2'),
                   AppCard(
-                    child: Container(
+                    child: SizedBox(
                       height: 1.5.sh,
-                      child: Text('Api Page'),
+                      child: const Text('Api Page'),
                     ),
                     onTap: () {
                       Get.toNamed(RouteName.USER);

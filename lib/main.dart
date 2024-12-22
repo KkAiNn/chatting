@@ -19,6 +19,8 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(style);
   configLoading();
 
+  // const AssetPickerConfig();
+
   // LocaleSettings.useDeviceLocale();
   runApp(const MyApp());
 }

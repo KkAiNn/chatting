@@ -4,12 +4,14 @@ import 'package:flutter_cli/base/controller/controller.dart';
 class FileLogic extends BaseCommonController {
   @override
   void initData() {
-    netState = NetState.loadingState;
-    Future.delayed(const Duration(seconds: 2), () {
-      netState = NetState.dataSussessState;
-      print('data success');
-      update();
-    });
+    netState = NetState.dataSussessState;
+    update();
+    // netState = NetState.loadingState;
+    // Future.delayed(const Duration(seconds: 2), () {
+    //   netState = NetState.dataSussessState;
+    //   print('data success');
+    //   update();
+    // });
   }
 
   @override

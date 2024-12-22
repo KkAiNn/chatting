@@ -6,12 +6,15 @@
  * @FilePath: \flutter_cli\lib\routes\index.dart
  * @Description: 
  */
+import 'package:flutter_cli/pages/file/mannager/binding.dart';
+import 'package:flutter_cli/pages/file/mannager/index.dart';
 import 'package:flutter_cli/pages/tabbar/binding.dart';
 import 'package:flutter_cli/pages/tabbar/index.dart';
 import 'package:flutter_cli/pages/list/index.dart';
 import 'package:flutter_cli/pages/list/binding.dart';
 import 'package:flutter_cli/pages/user/index.dart';
 import 'package:flutter_cli/pages/user/binding.dart';
+import 'package:flutter_cli/widgets/ImageViewer.dart';
 import 'package:get/get.dart';
 
 abstract class RouteName {
@@ -21,19 +24,39 @@ abstract class RouteName {
   static String USER = '/user';
   static String REGISTER = '/register';
   static String DEMOLIST = '/list';
+  static String FileManager = '/fileManager';
+  static String ImageViewer = '/preview_image';
 }
 
 abstract class AppRouter {
   static var pages = [
     GetPage(
-        name: RouteName.INITAL,
-        page: () => TabbarPage(),
-        binding: TabbarBinding()),
+      name: RouteName.INITAL,
+      page: () => TabbarPage(),
+      binding: TabbarBinding(),
+    ),
     GetPage(
-        name: RouteName.DEMOLIST,
-        page: () => ListDemo(),
-        binding: ListBinding()),
+      name: RouteName.DEMOLIST,
+      page: () => ListDemo(),
+      binding: ListBinding(),
+      transition: Transition.rightToLeftWithFade,
+    ),
     GetPage(
-        name: RouteName.USER, page: () => UserDemo(), binding: UserBinding())
+      name: RouteName.USER,
+      page: () => UserDemo(),
+      binding: UserBinding(),
+      transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: RouteName.FileManager,
+      page: () => FileMannagerPage(),
+      binding: FileMannagerBinding(),
+      transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: RouteName.ImageViewer,
+      page: () => const ImageViewer(),
+      transition: Transition.fade,
+    ),
   ];
 }
