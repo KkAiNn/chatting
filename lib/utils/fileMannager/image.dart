@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' as ui;
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
@@ -7,14 +8,13 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_cli/routes/index.dart';
 import 'package:flutter_cli/widgets/ImageViewer.dart';
 import 'package:get/get.dart';
-import 'dart:ui' as ui;
-
 import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
+
 import 'package:path_provider/path_provider.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 class ImageUtils {
-  /// 创建图片
+  /// 根据key 创建图片
   static Future<Uint8List?> capturePng(GlobalKey key) async {
     try {
       RenderRepaintBoundary boundary =
@@ -28,6 +28,7 @@ class ImageUtils {
     }
   }
 
+  /// 根据key 创建图片 并且 保存图片
   static captureAndSaveImage(
     GlobalKey key, {
     String? name,
@@ -149,6 +150,43 @@ class ImageUtils {
       "initialPage": index,
       "type": ImageViewerType.network,
     });
+  }
+
+  /// 获取七牛云上图片缩略图
+  static getQiNiuImageThumbUrl(String url,
+      {double width = 350.0, double? height, int quality = 80}) {
+    if (url.contains('?Size=') || url.contains('?size=')) {
+      List<String> strList =
+          url.contains('?Size=') ? url.split('?Size=') : url.split('?size=');
+      url = strList.first;
+
+      if (height == null) {
+        String sizeStr = strList.last;
+        List<String> sizeList = sizeStr.split('x');
+        double oldImgWid = double.parse(sizeList.first);
+        double oldImgHei = double.parse(sizeList.last);
+        double newImgWid = width;
+        double proportion = oldImgHei / oldImgWid;
+        if (proportion > 1) {
+          proportion = 4 / 3;
+        } else {
+          proportion = 3 / 4;
+        }
+        double newImgHei = proportion * newImgWid;
+        url +=
+            '?x-oss-process=image/resize,m_fill,w_${newImgWid.floor()},h_${newImgHei.floor()}/quality,q_$quality';
+      } else {
+        url +=
+            '?x-oss-process=image/resize,m_fill,w_${width.floor()},h_${height.floor()}/quality,q_$quality';
+      }
+    } else {
+      if (height != null) {
+        url +=
+            '?x-oss-process=image/resize,m_fill,w_${width.floor()},h_${height.floor()}/quality,q_$quality';
+      }
+    }
+
+    return url;
   }
 }
 
