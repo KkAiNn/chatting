@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 09:50:07
- * @LastEditTime: 2024-12-18 13:46:52
+ * @LastEditTime: 2025-01-10 17:30:06
  * @LastEditors: wurangkun
  * @FilePath: \flutter_cli\lib\routes\index.dart
  * @Description: 
@@ -53,10 +53,10 @@ abstract class AppRouter {
       binding: FileMannagerBinding(),
       transition: Transition.rightToLeftWithFade,
     ),
-    GetPage(
-      name: RouteName.ImageViewer,
-      page: () => const ImageViewer(),
-      transition: Transition.fade,
-    ),
+    // GetPage(
+    //   name: RouteName.ImageViewer,
+    //   page: () => const ImageViewer(),
+    //   transition: Transition.fade,
+    // ),
   ];
 }

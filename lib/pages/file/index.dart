@@ -1,11 +1,13 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 15:05:09
- * @LastEditTime: 2024-12-18 13:48:38
+ * @LastEditTime: 2025-01-10 16:33:57
  * @LastEditors: wurangkun
  * @FilePath: \flutter_cli\lib\pages\file\index.dart
  * @Description: 
  */
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/base/view/common_view.dart';
 import 'package:flutter_cli/constants/colors.dart';
@@ -35,41 +37,46 @@ class FilePage extends BaseCommonView<FileLogic> {
       ExpansionItem(title: '网络图片保存', children: NetImageSave()),
     ];
     return creatCommonView(
-        logic,
-        (con) => MyPage(children: [
-              Card(
+      logic,
+      (con) => MyPage(
+        children: [
+          Card(
+            color: Colors.amber.shade200,
+            child: GestureDetector(
+              onTap: () {
+                Get.toNamed(RouteName.FileManager);
+              },
+              child: Padding(
+                padding: EdgeInsets.all(10.sp),
+                child: const Text('系统文件管理'),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 680.h,
+            child: ListView.builder(
+              itemCount: expansionlist.length,
+              itemBuilder: (context, index) {
+                return Card(
                   color: Colors.amber.shade200,
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.toNamed(RouteName.FileManager);
-                    },
-                    child: Padding(
-                        padding: EdgeInsets.all(10.sp),
-                        child: const Text(
-                          '系统文件管理',
-                        )),
-                  )),
-              SizedBox(
-                height: 680.h,
-                child: ListView.builder(
-                    itemCount: expansionlist.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        color: Colors.amber.shade200,
-                        child: ExpansionTile(
-                          title: Text(
-                            expansionlist[index].title,
-                            style:
-                                TextStyle(fontSize: 16.sp, color: Colours.text),
-                          ),
-                          childrenPadding: EdgeInsets.symmetric(
-                              vertical: 10.h, horizontal: 20.w),
-                          children: expansionlist[index].children,
-                        ),
-                      );
-                    }),
-              )
-            ]));
+                  child: ExpansionTile(
+                    title: Text(
+                      expansionlist[index].title,
+                      style: TextStyle(fontSize: 16.sp, color: Colours.text),
+                    ),
+                    childrenPadding: EdgeInsets.symmetric(
+                      vertical: 10.h,
+                      horizontal: 20.w,
+                    ),
+                    children: expansionlist[index].children,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -95,33 +102,19 @@ List<Widget> LocalImageSave() {
   return [
     Padding(
       padding: EdgeInsets.all(8.sp),
-      child: MyQrCode(data: 'wurangkun', size: 200.sp)
-
-      // RepaintBoundary(
-      //     key: repaintKey,
-      //     child: GestureDetector(
-      //       onTap: () {
-      //         ImageUtils.previewLocalImage(
-      //           urls: ['assets/images/1.png', 'assets/images/2.png'],
-      //         );
-      //       },
-      //       child: Hero(
-      //         tag: 'wurangkun_qrcode',
-      //         child: QrImageView(
-      //           data: 'wurangkun',
-      //           version: QrVersions.auto,
-      //           backgroundColor: Colors.white,
-      //           size: 200.0,
-      //         ),
-      //       ),
-      //     )
-      //     )
-      ,
+      child: MyQrCode(
+        data: 'wurangkun',
+        size: 200.sp,
+        globalKey: repaintKey,
+        onTap: () async {
+          var res = await ImageUtils.capturePng(repaintKey);
+          if (res != null) {
+            ImageUtils.previewLocalImage(urls: [res.file]);
+          }
+        },
+      ),
     ),
-    ElevatedButton(
-      onPressed: saveImage,
-      child: const Text('下载二维码'),
-    )
+    ElevatedButton(onPressed: saveImage, child: const Text('下载二维码')),
   ];
 }
 
@@ -131,10 +124,7 @@ List<Widget> NetImageSave() {
 
   Future saveImage() async {
     if (await PermissionUtils.checkPermission(Permission.storage)) {
-      ImageUtils.saveNetworkImage(
-        src,
-        onSuccess: (path) => showToast('保存成功'),
-      );
+      ImageUtils.saveNetworkImage(src, onSuccess: (path) => showToast('保存成功'));
     }
   }
 
@@ -147,9 +137,7 @@ List<Widget> NetImageSave() {
           height: 200,
           child: GestureDetector(
             onTap: () {
-              ImageUtils.previewNetImage(
-                urls: [src, src, src],
-              );
+              ImageUtils.previewNetImage(urls: [src, src, src]);
             },
             child: Hero(
               tag: src,
@@ -166,9 +154,6 @@ List<Widget> NetImageSave() {
         ),
       ),
     ),
-    ElevatedButton(
-      onPressed: saveImage,
-      child: const Text('保存图片'),
-    ),
+    ElevatedButton(onPressed: saveImage, child: const Text('保存图片')),
   ];
 }

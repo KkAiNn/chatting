@@ -1,3 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
      <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -87,9 +88,6 @@
 
     <!-- Permissions options for the `alarm` group -->
     <!-- <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> -->
-
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="flutter_application_1"
         android:name="${applicationName}"

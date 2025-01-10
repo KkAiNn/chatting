@@ -22,6 +22,7 @@ class FileLogic extends BaseCommonController {
   @override
   void onHidden() {
     // TODO: implement onHidden
+    print('hide');
   }
 
   @override
