@@ -6,8 +6,8 @@
  * @FilePath: \flutter_cli\lib\pages\home\homeBinding.dart
  * @Description: 
  */
-import 'package:flutter_cli/pages/file/logic.dart';
-import 'package:flutter_cli/pages/home/logic.dart';
+import 'package:flutter_cli/pages/tabbar/views/file/logic.dart';
+import 'package:flutter_cli/pages/tabbar/views/home/logic.dart';
 import 'package:flutter_cli/pages/tabbar/logic.dart';
 import 'package:get/get.dart';
 

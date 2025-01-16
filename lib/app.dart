@@ -1,14 +1,16 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-16 17:22:20
- * @LastEditTime: 2024-12-18 14:04:44
+ * @LastEditTime: 2025-01-16 15:52:19
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\app.dart
+ * @FilePath: \flutter-chat\lib\app.dart
  * @Description: 
  */
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/custom_animation.dart';
+import 'package:flutter_cli/pages/tabbar/views/user/logic.dart';
+import 'package:flutter_cli/splash/binding.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,23 +43,18 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate, //iOS
           ],
-          supportedLocales: const [
-            Locale('zh', 'CN'),
-            Locale('en', 'US'),
-          ],
+          supportedLocales: const [Locale('zh', 'CN'), Locale('en', 'US')],
           builder: (context, widget) {
             return MediaQuery(
               //设置文字大小不随系统设置改变
-              data: MediaQuery.of(context).copyWith(
-                textScaler: const TextScaler.linear(1.0),
-              ),
-              child: FlutterEasyLoading(
-                child: widget,
-              ),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: const TextScaler.linear(1.0)),
+              child: FlutterEasyLoading(child: widget),
             );
           },
           home: child,
-          initialBinding: AppBindings(),
+          initialBinding: SplashBinding(),
           navigatorKey: navigatorKey,
           theme: FlexThemeData.light(
             scheme: FlexScheme.flutterDash,
@@ -76,9 +73,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
             scheme: FlexScheme.flutterDash,
             surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
             blendLevel: 15,
-            subThemesData: const FlexSubThemesData(
-              blendOnLevel: 20,
-            ),
+            subThemesData: const FlexSubThemesData(blendOnLevel: 20),
             visualDensity: FlexColorScheme.comfortablePlatformDensity,
             // To use the Playground font, add GoogleFonts package and uncomment
             // fontFamily: GoogleFonts.notoSans().fontFamily,
@@ -107,11 +102,4 @@ void configLoading() {
     ..userInteractions = true
     ..dismissOnTap = false
     ..customAnimation = CustomAnimation();
-}
-
-class AppBindings extends Bindings {
-  @override
-  void dependencies() {
-    Get.put(ThemeController(), permanent: true);
-  }
 }

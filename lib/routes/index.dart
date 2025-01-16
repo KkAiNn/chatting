@@ -1,23 +1,27 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 09:50:07
- * @LastEditTime: 2025-01-15 10:09:00
+ * @LastEditTime: 2025-01-16 15:49:23
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\routes\index.dart
+ * @FilePath: \flutter-chat\lib\routes\index.dart
  * @Description: 
  */
-import 'package:flutter_cli/pages/file/mannager/binding.dart';
-import 'package:flutter_cli/pages/file/mannager/index.dart';
+import 'package:flutter_cli/pages/tabbar/views/file/mannager/binding.dart';
+import 'package:flutter_cli/pages/tabbar/views/file/mannager/index.dart';
+import 'package:flutter_cli/pages/login/binding.dart';
+import 'package:flutter_cli/pages/login/index.dart';
 import 'package:flutter_cli/pages/tabbar/binding.dart';
 import 'package:flutter_cli/pages/tabbar/index.dart';
 import 'package:flutter_cli/pages/list/index.dart';
 import 'package:flutter_cli/pages/list/binding.dart';
-import 'package:flutter_cli/pages/user/index.dart';
-import 'package:flutter_cli/pages/user/binding.dart';
+import 'package:flutter_cli/pages/tabbar/views/user/index.dart';
+import 'package:flutter_cli/pages/tabbar/views/user/binding.dart';
+import 'package:flutter_cli/splash/splash.dart';
 import 'package:get/get.dart';
 
 abstract class RouteName {
   static String INITAL = '/';
+  static String SplashPage = '/splash';
   static String HOME = '/home';
   static String LOGIN = '/login';
   static String USER = '/user';
@@ -31,8 +35,20 @@ abstract class AppRouter {
   static var pages = [
     GetPage(
       name: RouteName.INITAL,
-      page: () => TabbarPage(),
+      page: () => SplashPage(),
       binding: TabbarBinding(),
+    ),
+    GetPage(
+      name: RouteName.SplashPage,
+      page: () => SplashPage(),
+      // binding: LoginBinding(),
+      // transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: RouteName.LOGIN,
+      page: () => Login(),
+      binding: LoginBinding(),
+      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: RouteName.DEMOLIST,
