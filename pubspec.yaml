@@ -1,5 +1,5 @@
-name: flutter_cli
-description: "A new Flutter project."
+name: flutter_chat
+description: "chat app"
 publish_to: "none"
 version: 0.1.0
 

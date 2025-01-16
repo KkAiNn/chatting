@@ -6,10 +6,10 @@
  * @FilePath: \flutter-chat\lib\splash\logic.dart
  * @Description: 
  */
-import 'package:flutter_cli/models/user_model/user_model.dart';
-import 'package:flutter_cli/pages/tabbar/logic.dart';
-import 'package:flutter_cli/pages/tabbar/views/home/logic.dart';
-import 'package:flutter_cli/providers/auth_provider.dart';
+import 'package:flutter_chat/models/user_model/user_model.dart';
+import 'package:flutter_chat/pages/tabbar/logic.dart';
+import 'package:flutter_chat/pages/tabbar/views/home/logic.dart';
+import 'package:flutter_chat/providers/auth_provider.dart';
 import 'package:get/get.dart';
 
 class AppLogic extends GetxController {

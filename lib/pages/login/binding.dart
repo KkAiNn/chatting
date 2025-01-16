@@ -6,7 +6,7 @@
  * @FilePath: \flutter-chat\lib\pages\login\binding.dart
  * @Description: 
  */
-import 'package:flutter_cli/pages/login/logic.dart';
+import 'package:flutter_chat/pages/login/logic.dart';
 import 'package:get/get.dart';
 
 class LoginBinding extends Bindings {

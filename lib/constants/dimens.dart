@@ -3,7 +3,7 @@
  * @Date: 2024-10-16 19:48:24
  * @LastEditTime: 2024-10-22 11:04:11
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\constants\dimens.dart
+ * @FilePath: \flutter_chat\lib\constants\dimens.dart
  * @Description: 
  */
 import 'package:flutter_screenutil/flutter_screenutil.dart';

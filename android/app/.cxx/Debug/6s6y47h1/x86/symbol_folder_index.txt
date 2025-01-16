@@ -1,1 +1,1 @@
-G:\flutter\flutter_cli\build\app\intermediates\cxx\Debug\6s6y47h1\obj\x86
+G:\flutter\flutter_chat\build\app\intermediates\cxx\Debug\6s6y47h1\obj\x86

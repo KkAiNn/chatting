@@ -3,7 +3,7 @@
  * @Date: 2024-10-21 18:02:41
  * @LastEditTime: 2024-12-17 10:20:01
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\widgets\card.dart
+ * @FilePath: \flutter_chat\lib\widgets\card.dart
  * @Description: 
  */
 import 'dart:developer';
@@ -27,8 +27,12 @@ class AppCard extends StatelessWidget {
         }
       },
       child: Ink(
-        padding:
-            EdgeInsets.only(left: 16.w, right: 16.w, top: 8.h, bottom: 8.h),
+        padding: EdgeInsets.only(
+          left: 16.w,
+          right: 16.w,
+          top: 8.h,
+          bottom: 8.h,
+        ),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.r),

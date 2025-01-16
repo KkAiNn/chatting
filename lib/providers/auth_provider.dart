@@ -10,7 +10,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_cli/models/user_model/user_model.dart';
+import 'package:flutter_chat/models/user_model/user_model.dart';
 import 'package:sp_util/sp_util.dart';
 // import 'package:tfapp/user_manager/user_token_entity.dart';
 

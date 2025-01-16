@@ -7,7 +7,7 @@
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/models/user_model/user_model.dart';
+import 'package:flutter_chat/models/user_model/user_model.dart';
 
 class Login extends StatelessWidget {
   final void Function(UserVo user)? onTap;

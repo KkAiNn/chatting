@@ -6,8 +6,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_cli/routes/index.dart';
-import 'package:flutter_cli/widgets/ImageViewer.dart';
+import 'package:flutter_chat/routes/index.dart';
+import 'package:flutter_chat/widgets/ImageViewer.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 

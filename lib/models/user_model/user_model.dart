@@ -6,7 +6,7 @@
  * @FilePath: \flutter-chat\lib\models\user_model\user_model.dart
  * @Description: 
  */
-import 'package:flutter_cli/models/education_company/education_company.dart';
+import 'package:flutter_chat/models/education_company/education_company.dart';
 import "package:json_annotation/json_annotation.dart";
 import 'dart:convert';
 

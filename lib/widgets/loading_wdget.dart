@@ -3,7 +3,7 @@
  * @Date: 2024-12-17 10:10:12
  * @LastEditTime: 2024-12-17 11:29:49
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\widgets\loading_wdget.dart
+ * @FilePath: \flutter_chat\lib\widgets\loading_wdget.dart
  * @Description: 
  */
 import 'package:flutter/cupertino.dart';
@@ -21,10 +21,7 @@ class LoadingWidget extends StatelessWidget {
     } else {
       return const Center(
         //保证控件居中效果
-        child: CupertinoActivityIndicator(
-          radius: 14,
-          color: Colors.black38,
-        ),
+        child: CupertinoActivityIndicator(radius: 14, color: Colors.black38),
       );
     }
   }
@@ -40,17 +37,11 @@ class Loading {
     Function()? dismiss,
   }) {
     Loading.dissmiss();
-    EasyLoading.showToast(
-      msg,
-      toastPosition: toastPosition,
-    );
+    EasyLoading.showToast(msg, toastPosition: toastPosition);
   }
 
   /// 提示文字
-  static void show({
-    String? title,
-    double textFont = 14.0,
-  }) {
+  static void show({String? title, double textFont = 14.0}) {
     EasyLoading.instance
       ..displayDuration = const Duration(milliseconds: 2000)
       ..indicatorType = EasyLoadingIndicatorType.circle

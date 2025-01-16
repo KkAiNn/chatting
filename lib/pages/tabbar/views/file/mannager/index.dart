@@ -3,16 +3,16 @@
  * @Date: 2024-10-21 15:05:09
  * @LastEditTime: 2024-12-18 13:48:38
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\pages\file\index.dart
+ * @FilePath: \flutter_chat\lib\pages\file\index.dart
  * @Description: 
  */
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/view/common_view.dart';
-import 'package:flutter_cli/layout/page/index.dart';
-import 'package:flutter_cli/pages/tabbar/views/file/mannager/logic.dart';
-import 'package:flutter_cli/utils/fileMannager/image.dart';
+import 'package:flutter_chat/base/view/common_view.dart';
+import 'package:flutter_chat/layout/page/index.dart';
+import 'package:flutter_chat/pages/tabbar/views/file/mannager/logic.dart';
+import 'package:flutter_chat/utils/fileMannager/image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';

@@ -7,9 +7,9 @@
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/pages/login/index.dart';
-import 'package:flutter_cli/pages/tabbar/index.dart';
-import 'package:flutter_cli/splash/logic.dart';
+import 'package:flutter_chat/pages/login/index.dart';
+import 'package:flutter_chat/pages/tabbar/index.dart';
+import 'package:flutter_chat/splash/logic.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends StatelessWidget {

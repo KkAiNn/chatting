@@ -3,11 +3,11 @@
  * @Date: 2024-12-17 09:55:49
  * @LastEditTime: 2024-12-18 14:06:58
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\base\view\view.dart
+ * @FilePath: \flutter_chat\lib\base\view\view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/layout/page/index.dart';
+import 'package:flutter_chat/layout/page/index.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -67,10 +67,7 @@ abstract class BaseView<T> extends GetView<T> {
         toolbarHeight: navBarH,
         // backgroundColor: Theme.of(context).colorScheme,
         centerTitle: true,
-        title: Text(
-          navTitle ?? '',
-          style: TextStyle(fontSize: 18.sp),
-        ),
+        title: Text(navTitle ?? '', style: TextStyle(fontSize: 18.sp)),
         leading: leftButton ?? buildDefaultLeading(navIndex),
         leadingWidth: leftWidth ?? 66.w,
         actions: rightActionList,
@@ -78,8 +75,10 @@ abstract class BaseView<T> extends GetView<T> {
     }
 
     /// 自定义导航栏 不占位appbar
-    Widget buildCustomAppBar(
-        {Color? appBarbackgroundColor, String? appbarTitle}) {
+    Widget buildCustomAppBar({
+      Color? appBarbackgroundColor,
+      String? appbarTitle,
+    }) {
       return SafeArea(
         top: true,
         child: SizedBox(
@@ -90,11 +89,12 @@ abstract class BaseView<T> extends GetView<T> {
             children: [
               leftButton ?? buildDefaultLeading(navIndex),
               Expanded(
-                  flex: 1,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: rightActionList ?? [],
-                  ))
+                flex: 1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: rightActionList ?? [],
+                ),
+              ),
             ],
           ),
         ),
@@ -104,24 +104,26 @@ abstract class BaseView<T> extends GetView<T> {
     /// 常规页面
     Widget buildPage() {
       return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
-          appBar: isHiddenNav == true ? null : buildAppBar(),
-          body: MyPage(children: [buildContent()]));
+        backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
+        appBar: isHiddenNav == true ? null : buildAppBar(),
+        body: MyPage(children: [buildContent()]),
+      );
     }
 
     /// appbar不占位页面
     Widget buildFixedAppBarPage() {
       return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
-          body: SafeArea(
-              top: true,
-              child: Stack(
-                children: [
-                  MyPage(children: [buildContent()]),
-                  Positioned(
-                      top: 0, left: 0, right: 0, child: buildCustomAppBar()),
-                ],
-              )));
+        backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
+        body: SafeArea(
+          top: true,
+          child: Stack(
+            children: [
+              MyPage(children: [buildContent()]),
+              Positioned(top: 0, left: 0, right: 0, child: buildCustomAppBar()),
+            ],
+          ),
+        ),
+      );
     }
 
     return isCustomAppBar == true ? buildFixedAppBarPage() : buildPage();
@@ -134,46 +136,44 @@ Widget buildDefaultLeading(int index) {
     width: 24.w,
     height: 24.h,
     child: GestureDetector(
-        onTap: () {
-          print('object');
-          Get.back();
-        },
-        child: Icon(
-          Icons.arrow_back_ios_new,
-          size: 24.w,
-        )),
+      onTap: () {
+        print('object');
+        Get.back();
+      },
+      child: Icon(Icons.arrow_back_ios_new, size: 24.w),
+    ),
   );
   Widget home = SizedBox(
     width: 24.w,
     height: 24.h,
     child: GestureDetector(
-        onTap: () {
-          Get.until((route) => route.isFirst);
-        },
-        child: Icon(
-          Icons.home,
-          size: 24.w,
-        )),
+      onTap: () {
+        Get.until((route) => route.isFirst);
+      },
+      child: Icon(Icons.home, size: 24.w),
+    ),
   );
   if (index > 1) {
     if (index > 2) {
       return Padding(
-          padding: EdgeInsets.only(left: 10.w),
-          child: Flex(
-            direction: Axis.horizontal,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [back, SizedBox(width: 8.w), home],
-          ));
-    }
-    return Padding(
         padding: EdgeInsets.only(left: 10.w),
         child: Flex(
           direction: Axis.horizontal,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [back],
-        ));
+          children: [back, SizedBox(width: 8.w), home],
+        ),
+      );
+    }
+    return Padding(
+      padding: EdgeInsets.only(left: 10.w),
+      child: Flex(
+        direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [back],
+      ),
+    );
   }
   return const SizedBox();
 }

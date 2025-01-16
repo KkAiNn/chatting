@@ -7,10 +7,10 @@
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/view/common_view.dart';
-import 'package:flutter_cli/layout/page/index.dart';
-import 'package:flutter_cli/splash/logic.dart';
-import 'package:flutter_cli/widgets/card.dart';
+import 'package:flutter_chat/base/view/common_view.dart';
+import 'package:flutter_chat/layout/page/index.dart';
+import 'package:flutter_chat/splash/logic.dart';
+import 'package:flutter_chat/widgets/card.dart';
 import 'package:get/get.dart';
 
 import 'logic.dart';

@@ -7,12 +7,12 @@
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/layout/tabbar/index.dart';
-import 'package:flutter_cli/pages/tabbar/views/file/index.dart';
-import 'package:flutter_cli/pages/tabbar/views/home/index.dart';
-import 'package:flutter_cli/pages/setting/index.dart';
-import 'package:flutter_cli/pages/tabbar/logic.dart';
-import 'package:flutter_cli/widgets/pop_scope.dart';
+import 'package:flutter_chat/layout/tabbar/index.dart';
+import 'package:flutter_chat/pages/tabbar/views/file/index.dart';
+import 'package:flutter_chat/pages/tabbar/views/home/index.dart';
+import 'package:flutter_chat/pages/setting/index.dart';
+import 'package:flutter_chat/pages/tabbar/logic.dart';
+import 'package:flutter_chat/widgets/pop_scope.dart';
 import 'package:get/get.dart';
 
 class TabbarPage extends GetView<TabbarLogic> {

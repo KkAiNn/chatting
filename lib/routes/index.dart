@@ -6,17 +6,17 @@
  * @FilePath: \flutter-chat\lib\routes\index.dart
  * @Description: 
  */
-import 'package:flutter_cli/pages/tabbar/views/file/mannager/binding.dart';
-import 'package:flutter_cli/pages/tabbar/views/file/mannager/index.dart';
-import 'package:flutter_cli/pages/login/binding.dart';
-import 'package:flutter_cli/pages/login/index.dart';
-import 'package:flutter_cli/pages/tabbar/binding.dart';
-import 'package:flutter_cli/pages/tabbar/index.dart';
-import 'package:flutter_cli/pages/list/index.dart';
-import 'package:flutter_cli/pages/list/binding.dart';
-import 'package:flutter_cli/pages/tabbar/views/user/index.dart';
-import 'package:flutter_cli/pages/tabbar/views/user/binding.dart';
-import 'package:flutter_cli/splash/splash.dart';
+import 'package:flutter_chat/pages/tabbar/views/file/mannager/binding.dart';
+import 'package:flutter_chat/pages/tabbar/views/file/mannager/index.dart';
+import 'package:flutter_chat/pages/login/binding.dart';
+import 'package:flutter_chat/pages/login/index.dart';
+import 'package:flutter_chat/pages/tabbar/binding.dart';
+import 'package:flutter_chat/pages/tabbar/index.dart';
+import 'package:flutter_chat/pages/list/index.dart';
+import 'package:flutter_chat/pages/list/binding.dart';
+import 'package:flutter_chat/pages/tabbar/views/user/index.dart';
+import 'package:flutter_chat/pages/tabbar/views/user/binding.dart';
+import 'package:flutter_chat/splash/splash.dart';
 import 'package:get/get.dart';
 
 abstract class RouteName {

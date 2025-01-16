@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/controller/common_controller.dart';
-import 'package:flutter_cli/base/controller/controller.dart';
-import 'package:flutter_cli/constants/customs/pickers/directory_file_asset_picker.dart';
-import 'package:flutter_cli/constants/customs/pickers/insta_asset_picker.dart';
-import 'package:flutter_cli/constants/customs/pickers/multi_tabs_assets_picker.dart';
-import 'package:flutter_cli/constants/extensions.dart';
-import 'package:flutter_cli/pages/tabbar/views/file/mannager/state.dart';
-import 'package:flutter_cli/utils/fileMannager/image.dart';
-import 'package:flutter_cli/constants/custom_pick_method.dart';
+import 'package:flutter_chat/base/controller/common_controller.dart';
+import 'package:flutter_chat/base/controller/controller.dart';
+import 'package:flutter_chat/constants/customs/pickers/directory_file_asset_picker.dart';
+import 'package:flutter_chat/constants/customs/pickers/insta_asset_picker.dart';
+import 'package:flutter_chat/constants/customs/pickers/multi_tabs_assets_picker.dart';
+import 'package:flutter_chat/constants/extensions.dart';
+import 'package:flutter_chat/pages/tabbar/views/file/mannager/state.dart';
+import 'package:flutter_chat/utils/fileMannager/image.dart';
+import 'package:flutter_chat/constants/custom_pick_method.dart';
 import 'package:path_provider/path_provider.dart';
 
 class FileMannagerLogic extends BaseCommonController {

@@ -3,7 +3,7 @@
  * @Date: 2024-10-16 17:26:14
  * @LastEditTime: 2024-12-18 14:11:41
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\layout\tabbar\index.dart
+ * @FilePath: \flutter_chat\lib\layout\tabbar\index.dart
  * @Description: 
  */
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
@@ -27,12 +27,27 @@ class TabbarIcon {
 }
 
 List<TabbarIcon> iconList = [
-  TabbarIcon(Icons.home, '首页', Icons.sunny,
-      const Color.fromARGB(255, 63, 63, 63), const Color(0xFFff5252)),
-  TabbarIcon(Icons.dashboard_customize_outlined, '文件管理', Icons.sunny,
-      const Color.fromARGB(255, 63, 63, 63), const Color(0xFFFF5252)),
-  TabbarIcon(Icons.settings, '设置', Icons.sunny,
-      const Color.fromARGB(255, 63, 63, 63), const Color(0xFFFF5252)),
+  TabbarIcon(
+    Icons.home,
+    '首页',
+    Icons.sunny,
+    const Color.fromARGB(255, 63, 63, 63),
+    const Color(0xFFff5252),
+  ),
+  TabbarIcon(
+    Icons.dashboard_customize_outlined,
+    '文件管理',
+    Icons.sunny,
+    const Color.fromARGB(255, 63, 63, 63),
+    const Color(0xFFFF5252),
+  ),
+  TabbarIcon(
+    Icons.settings,
+    '设置',
+    Icons.sunny,
+    const Color.fromARGB(255, 63, 63, 63),
+    const Color(0xFFFF5252),
+  ),
 ];
 
 Widget myTabBar(BuildContext context, int index, Function(int) onTap) {
@@ -49,7 +64,7 @@ Widget myTabBar(BuildContext context, int index, Function(int) onTap) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon, size: 24, color: color),
-          Text(iconList[i].label, style: TextStyle(fontSize: 12.sp))
+          Text(iconList[i].label, style: TextStyle(fontSize: 12.sp)),
         ],
       );
     },

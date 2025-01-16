@@ -3,14 +3,14 @@
  * @Date: 2024-12-17 09:58:18
  * @LastEditTime: 2024-12-17 14:58:43
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\base\view\common_view.dart
+ * @FilePath: \flutter_chat\lib\base\view\common_view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/controller/controller.dart';
-import 'package:flutter_cli/base/view/view.dart';
-import 'package:flutter_cli/widgets/empty_status.dart';
-import 'package:flutter_cli/widgets/loading_wdget.dart';
+import 'package:flutter_chat/base/controller/controller.dart';
+import 'package:flutter_chat/base/view/view.dart';
+import 'package:flutter_chat/widgets/empty_status.dart';
+import 'package:flutter_chat/widgets/loading_wdget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../controller/common_controller.dart';
 
@@ -22,9 +22,7 @@ abstract class BaseCommonView<T> extends BaseView<T> {
 
   /// 创建空视图 (子视图实现的话 Widget就是子视图实现的)
   Widget creatEmptyWidget() {
-    return const EmptyStatusWidget(
-      emptyType: EmptyStatusType.noMessage,
-    );
+    return const EmptyStatusWidget(emptyType: EmptyStatusType.noMessage);
   }
 
   /// 创建错误视图 (子视图实现的话 Widget就是子视图实现的)

@@ -3,7 +3,7 @@
  * @Date: 2024-10-16 17:26:13
  * @LastEditTime: 2024-12-17 18:30:59
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\layout\page\index.dart
+ * @FilePath: \flutter_chat\lib\layout\page\index.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';

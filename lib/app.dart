@@ -8,9 +8,9 @@
  */
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/custom_animation.dart';
-import 'package:flutter_cli/pages/tabbar/views/user/logic.dart';
-import 'package:flutter_cli/splash/binding.dart';
+import 'package:flutter_chat/custom_animation.dart';
+import 'package:flutter_chat/pages/tabbar/views/user/logic.dart';
+import 'package:flutter_chat/splash/binding.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

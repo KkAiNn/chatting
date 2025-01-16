@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
-import 'package:flutter_cli/constants/extensions.dart';
+import 'package:flutter_chat/constants/extensions.dart';
 
 const Color _themeColor = Color(0xfff2223a);
 
@@ -44,15 +44,15 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
     );
     final DefaultAssetPickerProvider imagesProvider =
         DefaultAssetPickerProvider(
-      selectedAssets: entities,
-      maxAssets: maxAssets,
-    );
+          selectedAssets: entities,
+          maxAssets: maxAssets,
+        );
     final DefaultAssetPickerProvider videosProvider =
         DefaultAssetPickerProvider(
-      selectedAssets: entities,
-      maxAssets: maxAssets,
-      requestType: RequestType.video,
-    );
+          selectedAssets: entities,
+          maxAssets: maxAssets,
+          requestType: RequestType.video,
+        );
     final MultiTabAssetPickerBuilder builder = MultiTabAssetPickerBuilder(
       provider: provider,
       imagesProvider: imagesProvider,
@@ -77,11 +77,12 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
     return AnimatedContainer(
       duration: kThemeChangeDuration,
       curve: Curves.easeInOut,
-      height: entities.isNotEmpty
-          ? isDisplayingDetail
-              ? 120.0
-              : 80.0
-          : 40.0,
+      height:
+          entities.isNotEmpty
+              ? isDisplayingDetail
+                  ? 120.0
+                  : 80.0
+              : 40.0,
       child: Column(
         children: <Widget>[
           SizedBox(
@@ -99,9 +100,7 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
                 children: <Widget>[
                   Text(context.l10n.selectedAssetsText),
                   Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                    ),
+                    margin: const EdgeInsets.symmetric(horizontal: 10.0),
                     padding: const EdgeInsets.all(4.0),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
@@ -109,10 +108,7 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
                     ),
                     child: Text(
                       '${entities.length}',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        height: 1.0,
-                      ),
+                      style: const TextStyle(color: Colors.white, height: 1.0),
                     ),
                   ),
                   if (entities.isNotEmpty)
@@ -140,26 +136,27 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         scrollDirection: Axis.horizontal,
         itemCount: entities.length,
-        itemBuilder: (_, int index) => Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8.0,
-            vertical: 16.0,
-          ),
-          child: AspectRatio(
-            aspectRatio: 1.0,
-            child: Stack(
-              children: <Widget>[
-                Positioned.fill(child: _selectedAssetWidget(index)),
-                AnimatedPositionedDirectional(
-                  duration: kThemeAnimationDuration,
-                  top: isDisplayingDetail ? 6.0 : -30.0,
-                  end: isDisplayingDetail ? 6.0 : -30.0,
-                  child: _selectedAssetDeleteButton(index),
+        itemBuilder:
+            (_, int index) => Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0,
+                vertical: 16.0,
+              ),
+              child: AspectRatio(
+                aspectRatio: 1.0,
+                child: Stack(
+                  children: <Widget>[
+                    Positioned.fill(child: _selectedAssetWidget(index)),
+                    AnimatedPositionedDirectional(
+                      duration: kThemeAnimationDuration,
+                      top: isDisplayingDetail ? 6.0 : -30.0,
+                      end: isDisplayingDetail ? 6.0 : -30.0,
+                      child: _selectedAssetDeleteButton(index),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
       ),
     );
   }
@@ -214,11 +211,7 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
           borderRadius: BorderRadius.circular(4.0),
           color: theme.canvasColor.withOpacity(0.5),
         ),
-        child: Icon(
-          Icons.close,
-          color: theme.iconTheme.color,
-          size: 18.0,
-        ),
+        child: Icon(Icons.close, color: theme.iconTheme.color, size: 18.0),
       ),
     );
   }
@@ -309,29 +302,32 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
               borderRadius: BorderRadius.circular(999),
               color: theme.dividerColor,
             ),
-            child: Selector<DefaultAssetPickerProvider,
-                PathWrapper<AssetPathEntity>?>(
+            child: Selector<
+              DefaultAssetPickerProvider,
+              PathWrapper<AssetPathEntity>?
+            >(
               selector: (_, DefaultAssetPickerProvider p) => p.currentPath,
-              builder: (_, PathWrapper<AssetPathEntity>? p, Widget? w) => Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  if (p != null)
-                    Flexible(
-                      child: Text(
-                        isPermissionLimited && p.path.isAll
-                            ? textDelegate.accessiblePathName
-                            : p.path.name,
-                        style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.normal,
+              builder:
+                  (_, PathWrapper<AssetPathEntity>? p, Widget? w) => Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      if (p != null)
+                        Flexible(
+                          child: Text(
+                            isPermissionLimited && p.path.isAll
+                                ? textDelegate.accessiblePathName
+                                : p.path.name,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.normal,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  w!,
-                ],
-              ),
+                      w!,
+                    ],
+                  ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.only(start: 5),
                 child: DecoratedBox(
@@ -363,19 +359,20 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
 
     return ChangeNotifierProvider<TabController>.value(
       value: _tabController,
-      builder: (_, __) => Selector<TabController, int>(
-        selector: (_, TabController p) => p.index,
-        builder: (_, int index, __) {
-          return ChangeNotifierProvider<DefaultAssetPickerProvider>.value(
-            value: switch (index) {
-              1 => videosProvider,
-              2 => imagesProvider,
-              _ => provider,
+      builder:
+          (_, __) => Selector<TabController, int>(
+            selector: (_, TabController p) => p.index,
+            builder: (_, int index, __) {
+              return ChangeNotifierProvider<DefaultAssetPickerProvider>.value(
+                value: switch (index) {
+                  1 => videosProvider,
+                  2 => imagesProvider,
+                  _ => provider,
+                },
+                builder: (BuildContext c, _) => selector(c),
+              );
             },
-            builder: (BuildContext c, _) => selector(c),
-          );
-        },
-      ),
+          ),
     );
   }
 
@@ -389,12 +386,11 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           disabledColor: theme.dividerColor,
           color: p.isSelectedNotEmpty ? themeColor : theme.dividerColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(3),
-          ),
-          onPressed: p.isSelectedNotEmpty
-              ? () => Navigator.maybeOf(context)?.maybePop(p.selectedAssets)
-              : null,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+          onPressed:
+              p.isSelectedNotEmpty
+                  ? () => Navigator.maybeOf(context)?.maybePop(p.selectedAssets)
+                  : null,
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           child: Text(
             p.isSelectedNotEmpty && !isSingleAssetMode
@@ -402,9 +398,10 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
                     ' (${p.selectedAssets.length}/${p.maxAssets})'
                 : textDelegate.confirm,
             style: TextStyle(
-              color: p.isSelectedNotEmpty
-                  ? theme.textTheme.bodyLarge?.color
-                  : theme.textTheme.bodySmall?.color,
+              color:
+                  p.isSelectedNotEmpty
+                      ? theme.textTheme.bodyLarge?.color
+                      : theme.textTheme.bodySmall?.color,
               fontSize: 17,
               fontWeight: FontWeight.normal,
             ),
@@ -414,19 +411,20 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
     );
     return ChangeNotifierProvider<TabController>.value(
       value: _tabController,
-      builder: (_, __) => Selector<TabController, int>(
-        selector: (_, TabController p) => p.index,
-        builder: (_, int index, __) {
-          return ChangeNotifierProvider<DefaultAssetPickerProvider>.value(
-            value: switch (index) {
-              1 => videosProvider,
-              2 => imagesProvider,
-              _ => provider,
+      builder:
+          (_, __) => Selector<TabController, int>(
+            selector: (_, TabController p) => p.index,
+            builder: (_, int index, __) {
+              return ChangeNotifierProvider<DefaultAssetPickerProvider>.value(
+                value: switch (index) {
+                  1 => videosProvider,
+                  2 => imagesProvider,
+                  _ => provider,
+                },
+                builder: (_, __) => button,
+              );
             },
-            builder: (_, __) => button,
-          );
-        },
-      ),
+          ),
     );
   }
 
@@ -524,22 +522,23 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
             p.hasAssetsToDisplay || shouldBuildSpecialItem;
         return AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
-          child: shouldDisplayAssets
-              ? Stack(
-                  children: <Widget>[
-                    RepaintBoundary(
-                      child: Column(
-                        children: <Widget>[
-                          Expanded(child: assetsGridBuilder(context)),
-                          bottomActionBar(context),
-                        ],
+          child:
+              shouldDisplayAssets
+                  ? Stack(
+                    children: <Widget>[
+                      RepaintBoundary(
+                        child: Column(
+                          children: <Widget>[
+                            Expanded(child: assetsGridBuilder(context)),
+                            bottomActionBar(context),
+                          ],
+                        ),
                       ),
-                    ),
-                    pathEntityListBackdrop(context),
-                    pathEntityListWidget(context),
-                  ],
-                )
-              : loadingIndicator(context),
+                      pathEntityListBackdrop(context),
+                      pathEntityListWidget(context),
+                    ],
+                  )
+                  : loadingIndicator(context),
         );
       },
     );
@@ -552,19 +551,20 @@ class MultiTabAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
       child: Theme(
         data: theme,
         child: Builder(
-          builder: (BuildContext context) => Material(
-            color: theme.canvasColor,
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                if (isAppleOS(context))
-                  appleOSLayout(context)
-                else
-                  androidLayout(context),
-                permissionOverlay(context),
-              ],
-            ),
-          ),
+          builder:
+              (BuildContext context) => Material(
+                color: theme.canvasColor,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    if (isAppleOS(context))
+                      appleOSLayout(context)
+                    else
+                      androidLayout(context),
+                    permissionOverlay(context),
+                  ],
+                ),
+              ),
         ),
       ),
     );

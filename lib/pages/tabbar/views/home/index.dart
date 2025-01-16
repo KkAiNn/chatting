@@ -8,14 +8,14 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/view/common_view.dart';
-import 'package:flutter_cli/constants/gap.dart';
-import 'package:flutter_cli/layout/page/index.dart';
-import 'package:flutter_cli/models/user_model/user_model.dart';
-import 'package:flutter_cli/pages/tabbar/views/home/logic.dart';
-import 'package:flutter_cli/providers/auth_provider.dart';
-import 'package:flutter_cli/routes/index.dart';
-import 'package:flutter_cli/widgets/cell.dart';
+import 'package:flutter_chat/base/view/common_view.dart';
+import 'package:flutter_chat/constants/gap.dart';
+import 'package:flutter_chat/layout/page/index.dart';
+import 'package:flutter_chat/models/user_model/user_model.dart';
+import 'package:flutter_chat/pages/tabbar/views/home/logic.dart';
+import 'package:flutter_chat/providers/auth_provider.dart';
+import 'package:flutter_chat/routes/index.dart';
+import 'package:flutter_chat/widgets/cell.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 

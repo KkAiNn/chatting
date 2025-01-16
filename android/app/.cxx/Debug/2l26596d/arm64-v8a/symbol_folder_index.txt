@@ -1,1 +1,1 @@
-G:\flutter\flutter_cli\build\app\intermediates\cxx\Debug\2l26596d\obj\arm64-v8a
+G:\flutter\flutter_chat\build\app\intermediates\cxx\Debug\2l26596d\obj\arm64-v8a

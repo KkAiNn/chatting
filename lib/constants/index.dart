@@ -3,7 +3,7 @@
  * @Date: 2024-10-16 19:24:21
  * @LastEditTime: 2024-10-16 19:27:44
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\constants\index.dart
+ * @FilePath: \flutter_chat\lib\constants\index.dart
  * @Description: 
  */
 class Constants {

@@ -3,11 +3,11 @@
  * @Date: 2024-12-17 11:22:11
  * @LastEditTime: 2024-12-18 13:46:06
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\pages\home\logic.dart
+ * @FilePath: \flutter_chat\lib\pages\home\logic.dart
  * @Description: 
  */
-import 'package:flutter_cli/base/controller/common_controller.dart';
-import 'package:flutter_cli/base/controller/controller.dart';
+import 'package:flutter_chat/base/controller/common_controller.dart';
+import 'package:flutter_chat/base/controller/controller.dart';
 
 class HomeLogic extends BaseCommonController {
   @override

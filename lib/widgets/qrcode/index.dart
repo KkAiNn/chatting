@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/utils/fileMannager/image.dart';
+import 'package:flutter_chat/utils/fileMannager/image.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class MyQrCode extends StatefulWidget {

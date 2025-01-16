@@ -1,2 +1,2 @@
-G:/flutter/flutter_cli/android/app/.cxx/Debug/6s6y47h1/x86_64/CMakeFiles/edit_cache.dir
-G:/flutter/flutter_cli/android/app/.cxx/Debug/6s6y47h1/x86_64/CMakeFiles/rebuild_cache.dir
+G:/flutter/flutter_chat/android/app/.cxx/Debug/6s6y47h1/x86_64/CMakeFiles/edit_cache.dir
+G:/flutter/flutter_chat/android/app/.cxx/Debug/6s6y47h1/x86_64/CMakeFiles/rebuild_cache.dir

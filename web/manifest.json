@@ -1,6 +1,6 @@
 {
-    "name": "flutter_cli",
-    "short_name": "flutter_cli",
+    "name": "flutter_chat",
+    "short_name": "flutter_chat",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

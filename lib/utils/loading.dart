@@ -3,7 +3,7 @@
  * @Date: 2024-10-21 12:17:57
  * @LastEditTime: 2024-10-21 13:39:01
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\utils\loading.dart
+ * @FilePath: \flutter_chat\lib\utils\loading.dart
  * @Description: 
  */
 
@@ -17,8 +17,9 @@ void hideLoading() {
   EasyLoading.dismiss();
 }
 
-void showToast(String msg,
-    {EasyLoadingToastPosition toastPosition =
-        EasyLoadingToastPosition.center}) {
+void showToast(
+  String msg, {
+  EasyLoadingToastPosition toastPosition = EasyLoadingToastPosition.center,
+}) {
   EasyLoading.showToast(msg, toastPosition: toastPosition);
 }

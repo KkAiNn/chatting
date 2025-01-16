@@ -3,12 +3,12 @@
  * @Date: 2024-10-21 17:02:27
  * @LastEditTime: 2024-12-17 18:24:27
  * @LastEditors: wurangkun
- * @FilePath: \flutter_cli\lib\pages\list\index.dart
+ * @FilePath: \flutter_chat\lib\pages\list\index.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_cli/base/view/common_view.dart';
-import 'package:flutter_cli/pages/list/logic.dart';
+import 'package:flutter_chat/base/view/common_view.dart';
+import 'package:flutter_chat/pages/list/logic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
