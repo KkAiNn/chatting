@@ -6,7 +6,6 @@
  * @FilePath: \flutter_cli\lib\pages\file\index.dart
  * @Description: 
  */
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/base/view/common_view.dart';
@@ -21,7 +20,6 @@ import 'package:flutter_cli/widgets/qrcode/index.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 
 class FilePage extends BaseCommonView<FileLogic> {
   FilePage({super.key});

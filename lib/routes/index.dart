@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 09:50:07
- * @LastEditTime: 2025-01-10 17:30:06
+ * @LastEditTime: 2025-01-15 10:09:00
  * @LastEditors: wurangkun
  * @FilePath: \flutter_cli\lib\routes\index.dart
  * @Description: 
@@ -14,7 +14,6 @@ import 'package:flutter_cli/pages/list/index.dart';
 import 'package:flutter_cli/pages/list/binding.dart';
 import 'package:flutter_cli/pages/user/index.dart';
 import 'package:flutter_cli/pages/user/binding.dart';
-import 'package:flutter_cli/widgets/ImageViewer.dart';
 import 'package:get/get.dart';
 
 abstract class RouteName {

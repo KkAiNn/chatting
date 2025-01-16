@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/base/controller/common_controller.dart';
 import 'package:flutter_cli/base/controller/controller.dart';
-import 'package:get/get.dart';
 
 class UserLogic extends BaseCommonController {
   void onGoToDetail() {

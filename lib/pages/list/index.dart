@@ -8,7 +8,6 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_cli/base/view/common_view.dart';
-import 'package:flutter_cli/layout/page/index.dart';
 import 'package:flutter_cli/pages/list/logic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -23,23 +22,25 @@ class ListDemo extends BaseCommonView<ListLogic> {
   @override
   Widget buildContent() {
     return GetBuilder<ListLogic>(
-      builder: (_) => creatCommonView(
-          logic,
-          (con) => Column(
-                children: [
-                  const Text('ListDemo'),
-                  const Text('ListDemo2'),
-                  AppCard(
-                    child: SizedBox(
-                      height: 1.5.sh,
-                      child: const Text('Api Page'),
-                    ),
-                    onTap: () {
-                      Get.toNamed(RouteName.USER);
-                    },
-                  )
-                ],
-              )),
+      builder:
+          (_) => creatCommonView(
+            logic,
+            (con) => Column(
+              children: [
+                const Text('ListDemo'),
+                const Text('ListDemo2'),
+                AppCard(
+                  child: SizedBox(
+                    height: 1.5.sh,
+                    child: const Text('Api Page'),
+                  ),
+                  onTap: () {
+                    Get.toNamed(RouteName.USER);
+                  },
+                ),
+              ],
+            ),
+          ),
     );
   }
 }

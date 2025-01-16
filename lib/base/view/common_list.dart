@@ -12,13 +12,11 @@ import '../controller/list_controller.dart';
 typedef BodyBuilder = Widget Function(BaseListController baseState);
 
 abstract class BaseListView<T> extends BaseView<T> {
-  BaseListView({Key? key}) : super(key: key);
+  BaseListView({super.key});
 
   /// 创建空视图 (子视图实现的话 Widget就是子视图实现的)
   Widget creatEmptyWidget() {
-    return const EmptyStatusWidget(
-      emptyType: EmptyStatusType.noMessage,
-    );
+    return const EmptyStatusWidget(emptyType: EmptyStatusType.noMessage);
   }
 
   /// 创建错误视图 (子视图实现的话 Widget就是子视图实现的)
@@ -59,24 +57,25 @@ abstract class BaseListView<T> extends BaseView<T> {
         headerBuilder: () => createCustomHeader(),
         footerBuilder: () => createFooter(),
         child: SmartRefresher(
-            controller: controller.refreshController,
+          controller: controller.refreshController,
 
-            /// 是否显示下拉
-            enablePullUp: enablePullUp ?? true,
+          /// 是否显示下拉
+          enablePullUp: enablePullUp ?? true,
 
-            /// 是否显示上拉
-            enablePullDown: enablePullDown ?? true,
+          /// 是否显示上拉
+          enablePullDown: enablePullDown ?? true,
 
-            /// 刷新回调方法
-            onRefresh: () async {
-              controller.refreshData();
-            },
+          /// 刷新回调方法
+          onRefresh: () async {
+            controller.refreshData();
+          },
 
-            /// 加载下一页回调
-            onLoading: () async {
-              controller.loadMore();
-            },
-            child: builder(controller)),
+          /// 加载下一页回调
+          onLoading: () async {
+            controller.loadMore();
+          },
+          child: builder(controller),
+        ),
       );
     } else if (controller.netState == NetState.initializeState) {
       return const SizedBox();
@@ -122,18 +121,12 @@ abstract class BaseListView<T> extends BaseView<T> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const CupertinoActivityIndicator(
-          radius: 10,
-          color: Colors.black45,
-        ),
+        const CupertinoActivityIndicator(radius: 10, color: Colors.black45),
         SizedBox(width: 8.w),
         Text(
           showText,
-          style: TextStyle(
-            color: const Color(0xFF979797),
-            fontSize: 14.sp,
-          ),
-        )
+          style: TextStyle(color: const Color(0xFF979797), fontSize: 14.sp),
+        ),
       ],
     );
   }
@@ -163,10 +156,7 @@ abstract class BaseListView<T> extends BaseView<T> {
     return Center(
       child: Text(
         showText,
-        style: TextStyle(
-          color: const Color(0xFF979797),
-          fontSize: 14.sp,
-        ),
+        style: TextStyle(color: const Color(0xFF979797), fontSize: 14.sp),
       ),
     );
   }
