@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2025-01-16 15:36:57
- * @LastEditTime: 2025-01-16 15:53:22
+ * @LastEditTime: 2025-01-17 16:07:31
  * @LastEditors: wurangkun
  * @FilePath: \flutter-chat\lib\splash\splash.dart
  * @Description: 
@@ -24,7 +24,7 @@ class SplashPage extends StatelessWidget {
           return TabbarPage();
         } else {
           // 未登录
-          return Login(onTap: logic.login);
+          return Login();
         }
       },
     );

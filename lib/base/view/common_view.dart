@@ -41,7 +41,6 @@ abstract class BaseCommonView<T> extends BaseView<T> {
 
   /// 创建页面主视图
   Widget creatCommonView(BaseCommonController controller, BodyBuilder builder) {
-    debugPrint('creatCommonView');
     if (controller.netState == NetState.loadingState) {
       /// loading 不会有这个状态,只是写一个这样的判断吧(控制器里面已经封装好了单例了,防止在网络层直接操作控制不了loading的场景)
       return const LoadingWidget();

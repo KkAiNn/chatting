@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2025-01-16 15:44:01
- * @LastEditTime: 2025-01-16 17:23:46
+ * @LastEditTime: 2025-01-17 16:04:07
  * @LastEditors: wurangkun
  * @FilePath: \flutter-chat\lib\splash\logic.dart
  * @Description: 

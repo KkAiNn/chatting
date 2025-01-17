@@ -1,9 +1,9 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-16 19:48:24
- * @LastEditTime: 2024-10-22 11:04:11
+ * @LastEditTime: 2025-01-17 15:04:44
  * @LastEditors: wurangkun
- * @FilePath: \flutter_chat\lib\constants\dimens.dart
+ * @FilePath: \flutter-chat\lib\constants\dimens.dart
  * @Description: 
  */
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,4 +26,5 @@ class Dimens {
   static double gap_dp24 = 24.sp;
   static double gap_dp32 = 32.sp;
   static double gap_dp50 = 50.sp;
+  static double gap_dp60 = 60.sp;
 }

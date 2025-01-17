@@ -7,6 +7,7 @@
  * @Description: 
  */
 import 'package:flutter_chat/base/theme/controller.dart';
+import 'package:flutter_chat/pages/login/logic.dart';
 import 'package:flutter_chat/pages/tabbar/logic.dart';
 import 'package:flutter_chat/splash/logic.dart';
 import 'package:get/get.dart';
@@ -15,6 +16,7 @@ class SplashBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<TabbarLogic>(() => TabbarLogic());
+    Get.lazyPut<LoginLogic>(() => LoginLogic());
     Get.lazyPut<AppLogic>(() => AppLogic());
     Get.put(ThemeController(), permanent: true);
   }

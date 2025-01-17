@@ -48,7 +48,7 @@ abstract class AppRouter {
       name: RouteName.LOGIN,
       page: () => Login(),
       binding: LoginBinding(),
-      transition: Transition.rightToLeftWithFade,
+      transition: Transition.noTransition,
     ),
     GetPage(
       name: RouteName.DEMOLIST,
