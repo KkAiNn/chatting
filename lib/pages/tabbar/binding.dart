@@ -6,12 +6,12 @@
  * @FilePath: \flutter_chat\lib\pages\home\homeBinding.dart
  * @Description: 
  */
-import 'package:flutter_chat/pages/tabbar/views/file/logic.dart';
+import 'package:flutter_chat/pages/file/logic.dart';
 import 'package:flutter_chat/pages/tabbar/views/home/logic.dart';
 import 'package:flutter_chat/pages/tabbar/logic.dart';
 import 'package:get/get.dart';
 
-import '../setting/logic.dart';
+import 'views/setting/logic.dart';
 
 class TabbarBinding extends Bindings {
   @override

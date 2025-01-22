@@ -1,9 +1,9 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-12-17 09:58:52
- * @LastEditTime: 2024-12-17 14:44:00
+ * @LastEditTime: 2025-01-21 18:37:01
  * @LastEditors: wurangkun
- * @FilePath: \flutter_chat\lib\base\controller\common_controller.dart
+ * @FilePath: \flutter-chat\lib\base\controller\common_controller.dart
  * @Description: 
  */
 import 'package:flutter_chat/base/list/abstract_network.dart';
@@ -15,7 +15,7 @@ import './controller.dart';
 abstract class BaseCommonController extends BaseController
     with AbstractListNetWork {
   @override
-  void getnetworkdata(Map<String, dynamic> info) {}
+  void getnetworkdata(Map<String, dynamic>? info) {}
 
   @override
   Map<String, dynamic> configNetWorkParmas() {

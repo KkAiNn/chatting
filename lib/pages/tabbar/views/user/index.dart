@@ -1,9 +1,9 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 17:02:27
- * @LastEditTime: 2024-12-18 13:26:18
+ * @LastEditTime: 2025-01-21 18:04:02
  * @LastEditors: wurangkun
- * @FilePath: \flutter_chat\lib\pages\user\index.dart
+ * @FilePath: \flutter-chat\lib\pages\tabbar\views\user\index.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class UserDemo extends BaseCommonView<UserLogic> {
       builder:
           (_) => creatCommonView(
             logic,
-            (con) => MyPage(
+            (con) => Column(
               children: [
                 const Text('UserDemo'),
                 AppCard(

@@ -1,18 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/base/controller/controller.dart';
+import 'package:flutter_chat/base/controller/list_controller.dart';
 import 'package:flutter_chat/base/view/view.dart';
+import 'package:flutter_chat/widgets/empty_status.dart';
+import 'package:flutter_chat/widgets/loading_wdget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
-import '../../widgets/empty_status.dart';
-import '../../widgets/loading_wdget.dart';
-import '../controller/controller.dart';
-import '../controller/list_controller.dart';
 
 typedef BodyBuilder = Widget Function(BaseListController baseState);
 
 abstract class BaseListView<T> extends BaseView<T> {
-  BaseListView({super.key});
+  BaseListView({Key? key}) : super(key: key);
 
   /// 创建空视图 (子视图实现的话 Widget就是子视图实现的)
   Widget creatEmptyWidget() {
@@ -39,6 +38,7 @@ abstract class BaseListView<T> extends BaseView<T> {
     BodyBuilder builder, {
     bool? enablePullUp,
     bool? enablePullDown,
+    bool enableLoadMoreVibrate = true,
   }) {
     if (controller.netState == NetState.loadingState) {
       /// loading 不会有这个状态,只是写一个这样的判断吧(控制器里面已经封装好了单例了,防止在网络层直接操作控制不了loading的场景)
@@ -56,6 +56,7 @@ abstract class BaseListView<T> extends BaseView<T> {
         enableBallisticLoad: false,
         headerBuilder: () => createCustomHeader(),
         footerBuilder: () => createFooter(),
+        enableLoadMoreVibrate: enableLoadMoreVibrate,
         child: SmartRefresher(
           controller: controller.refreshController,
 
@@ -145,7 +146,7 @@ abstract class BaseListView<T> extends BaseView<T> {
         } else if (mode == LoadStatus.canLoading) {
           body = _prompt("松手加载更多");
         } else {
-          body = _prompt("没有更多了～");
+          body = _prompt("");
         }
         return body;
       },

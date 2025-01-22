@@ -34,6 +34,10 @@ dependencies:
   wechat_assets_picker: ^9.4.2
   wechat_camera_picker: ^4.3.6
   sp_util: ^2.0.3
+  uuid: ^4.5.1
+  tencent_cloud_chat_sdk: ^8.4.6667
+  logger: ^2.5.0
+  flutter_slidable: ^3.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

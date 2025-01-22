@@ -23,3 +23,7 @@ void showToast(
 }) {
   EasyLoading.showToast(msg, toastPosition: toastPosition);
 }
+
+void showError(String msg) {
+  EasyLoading.showError(msg);
+}

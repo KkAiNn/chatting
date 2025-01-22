@@ -6,12 +6,12 @@
  * @FilePath: \flutter_chat\lib\pages\file\binding.dart
  * @Description: 
  */
-import 'package:flutter_chat/pages/tabbar/views/file/logic.dart';
+import 'package:flutter_chat/pages/file/mannager/logic.dart';
 import 'package:get/get.dart';
 
-class FileBinding extends Bindings {
+class FileMannagerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<FileLogic>(() => FileLogic());
+    Get.lazyPut<FileMannagerLogic>(() => FileMannagerLogic());
   }
 }

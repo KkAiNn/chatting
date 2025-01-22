@@ -1,0 +1,96 @@
+{
+	// Place your flutter-chat 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"get flutter stl": {
+		"scope": "dart",
+		"prefix": "ctf",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"import 'package:get/get.dart';",
+			"import 'package:flutter_screenutil/flutter_screenutil.dart';",
+			"import 'package:flutter_chat/base/view/common_view.dart';",
+			"import 'logic.dart';",
+			"",
+			"class ${1:MyLogic} extends BaseCommonView<${1:MyLogic}Logic> {",
+			"  ${1:MyLogic}({super.key});",
+			"  final logic = Get.find<${1:MyLogic}Logic>();",
+			"",
+			"  @override",
+			"  Widget buildContent() {",
+			"  return creatCommonView(",
+			"    logic,",
+			"    (con) => Center(child: Text('请实现 buildContent() 方法')),",
+			"  );",
+			"  }",
+			"}"
+		],
+		"description": "生成 common logic 模板"
+	},
+	"get flutter logic": {
+		"scope": "dart",
+		"prefix": "ctl",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"import 'package:get/get.dart';",
+			"import 'package:flutter_chat/base/controller/common_controller.dart';",
+			"import 'package:flutter_chat/base/controller/controller.dart';",
+			"",
+			"class ${1:MyLogic}Logic extends BaseCommonController {",
+			"",
+			"  @override",
+			"  void onInit() {",
+			"    super.onInit();",
+			"    /// 初始化数据",
+			"    netState = NetState.dataSussessState;",
+			"  }",
+			"  @override",
+			"  void initData() {",
+			"    /// 页面请求初始化数据",
+			"    // netState = NetState.dataSussessState;",
+			"    // update();",
+			"  }",
+			"  @override",
+			"  void loadMore() {",
+			"  }",
+			"  @override",
+			"  void onHidden() {",
+			"  }",
+			"  @override",
+			"  void refreshData() {",
+			"  }",
+			"",
+			"}"
+		],
+		"description": "生成 common view 模板"
+	},
+	"get flutter binding": {
+		"scope": "dart",
+		"prefix": "ctb",
+		"body": [
+			"import 'package:get/get.dart';",
+			"import 'logic.dart';",
+			"",
+			"class ${1:MyBinding}Binding extends Bindings {",
+			"  @override",
+			"  void dependencies() {",
+			"    Get.lazyPut(() => ${1:MyBinding}Logic());",
+			"  }",
+			"}"
+		],
+		"description": "生成 common binding 模板"
+	}
+}

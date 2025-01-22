@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat/base/view/common_view.dart';
 import 'package:flutter_chat/constants/colors.dart';
 import 'package:flutter_chat/layout/page/index.dart';
-import 'package:flutter_chat/pages/tabbar/views/file/logic.dart';
+import 'package:flutter_chat/pages/file/logic.dart';
 import 'package:flutter_chat/routes/index.dart';
 import 'package:flutter_chat/utils/fileMannager/image.dart';
 import 'package:flutter_chat/utils/loading.dart';
@@ -36,7 +36,7 @@ class FilePage extends BaseCommonView<FileLogic> {
     ];
     return creatCommonView(
       logic,
-      (con) => MyPage(
+      (con) => Column(
         children: [
           Card(
             color: Colors.amber.shade200,

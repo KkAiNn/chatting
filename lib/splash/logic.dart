@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2025-01-16 15:44:01
- * @LastEditTime: 2025-01-17 16:04:07
+ * @LastEditTime: 2025-01-21 15:10:18
  * @LastEditors: wurangkun
  * @FilePath: \flutter-chat\lib\splash\logic.dart
  * @Description: 
@@ -10,6 +10,7 @@ import 'package:flutter_chat/models/user_model/user_model.dart';
 import 'package:flutter_chat/pages/tabbar/logic.dart';
 import 'package:flutter_chat/pages/tabbar/views/home/logic.dart';
 import 'package:flutter_chat/providers/auth_provider.dart';
+import 'package:flutter_chat/providers/im/im.dart';
 import 'package:get/get.dart';
 
 class AppLogic extends GetxController {
@@ -30,15 +31,17 @@ class AppLogic extends GetxController {
     /// 首页的用户状态需求更新
     TabbarLogic tabbarLogic = Get.find<TabbarLogic>();
     HomeLogic homeLogic = Get.find<HomeLogic>();
+    ImMannger().init();
     tabbarLogic.index.value = 0;
     // homeLogic.state.refreshController.requestRefresh();
     update();
   }
 
   /*加载本地用户Token*/
-  localUserToken() {
+  localUserToken() async {
     UserVo? entity = UserManager.instance.loadLocalToken();
     if (entity != null) {
+      ImMannger().init();
       user.value = entity;
       loginState.value = true;
       update();

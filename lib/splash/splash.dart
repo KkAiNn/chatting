@@ -1,7 +1,7 @@
 /*
  * @Author: wurangkun
  * @Date: 2025-01-16 15:36:57
- * @LastEditTime: 2025-01-17 16:07:31
+ * @LastEditTime: 2025-01-21 09:35:14
  * @LastEditors: wurangkun
  * @FilePath: \flutter-chat\lib\splash\splash.dart
  * @Description: 

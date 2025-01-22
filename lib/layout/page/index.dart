@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyPage extends StatelessWidget {
-  final List<Widget> children;
+  final Widget child;
   final Function(double offset)? onScroll;
   final Axis direction = Axis.vertical;
 
-  const MyPage({super.key, required this.children, this.onScroll});
+  const MyPage({super.key, required this.child, this.onScroll});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,7 @@ class MyPage extends StatelessWidget {
     });
     return SizedBox(
       width: 1.sw,
-      child: SingleChildScrollView(
-        controller: controller,
-        child: Flex(direction: direction, children: children),
-      ),
+      child: SingleChildScrollView(controller: controller, child: child),
     );
   }
 }

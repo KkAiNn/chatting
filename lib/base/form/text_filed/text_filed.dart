@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/constants/gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +29,7 @@ class MyTextFiled extends StatefulWidget {
 
   final TextEditingController? controller;
 
-  final Widget? suffixIcon;
+  final List<Widget>? suffixIcon;
 
   final bool? showSuffix;
 
@@ -36,12 +37,18 @@ class MyTextFiled extends StatefulWidget {
 
   final bool? showPrefix;
 
+  /// 是否显示密码
+  final bool obscureText;
+  final bool autofocus;
+
   final FocusNode? focusNode;
 
   final void Function(String)? onChanged;
 
   const MyTextFiled({
     super.key,
+    this.obscureText = false,
+    this.autofocus = false,
     this.fontSize = 16,
     this.validator,
     this.cursorColor,
@@ -65,6 +72,7 @@ class MyTextFiled extends StatefulWidget {
 
 class _MyTextFiledState extends State<MyTextFiled> {
   late String inputText;
+  bool obscureText = false;
   @override
   void initState() {
     super.initState();
@@ -75,6 +83,7 @@ class _MyTextFiledState extends State<MyTextFiled> {
     if (widget.controller != null && widget.controller!.text.isNotEmpty) {
       inputText = widget.controller!.text;
     }
+    obscureText = widget.obscureText;
     setState(() {});
   }
 
@@ -82,18 +91,42 @@ class _MyTextFiledState extends State<MyTextFiled> {
     if (inputText.isEmpty) {
       return SizedBox();
     }
+
+    var passwordView =
+        widget.obscureText == true
+            ? GestureDetector(
+              onTap: toggleObscureText,
+              child: Container(
+                margin: EdgeInsets.only(right: 8.w),
+                child: Icon(
+                  Icons.remove_red_eye_outlined,
+                  color: Colors.grey,
+                  size: 20.sp,
+                ),
+              ),
+            )
+            : null;
+    var clear = GestureDetector(
+      onTap: clearControllerText,
+      child: Icon(Icons.cancel, color: Colors.grey, size: 20.sp),
+    );
+    List<Widget> suffix = [];
+
+    if (passwordView != null) {
+      suffix.add(passwordView);
+    }
+    if (widget.suffixIcon != null && widget.suffixIcon!.isNotEmpty) {
+      for (var e in widget.suffixIcon!) {
+        suffix.add(e);
+      }
+    }
+
+    suffix.add(clear);
     return Padding(
       padding: EdgeInsets.only(right: 10.w),
       child: SizedBox(
-        width: 20.w,
-        child: Row(
-          children: [
-            GestureDetector(
-              onTap: clearControllerText,
-              child: Icon(Icons.cancel, color: Colors.grey, size: 20.sp),
-            ),
-          ],
-        ),
+        width: (suffix.length * 20 + (suffix.length - 1) * 8).w,
+        child: Row(children: suffix),
       ),
     );
   }
@@ -116,10 +149,19 @@ class _MyTextFiledState extends State<MyTextFiled> {
     setState(() {});
   }
 
+  toggleObscureText() {
+    obscureText = !obscureText;
+    setState(() {});
+  }
+
+  final GlobalKey key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      focusNode: FocusNode(),
+      key: key,
+      obscureText: obscureText,
+      focusNode: widget.focusNode,
+      autofocus: widget.autofocus,
       controller: widget.controller,
       maxLines: widget.maxLines,
       minLines: 1,

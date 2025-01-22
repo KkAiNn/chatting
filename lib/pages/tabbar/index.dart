@@ -1,16 +1,16 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-10-21 09:53:27
- * @LastEditTime: 2025-01-16 17:20:21
+ * @LastEditTime: 2025-01-21 14:03:38
  * @LastEditors: wurangkun
  * @FilePath: \flutter-chat\lib\pages\tabbar\index.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/layout/tabbar/index.dart';
-import 'package:flutter_chat/pages/tabbar/views/file/index.dart';
+import 'package:flutter_chat/pages/file/index.dart';
 import 'package:flutter_chat/pages/tabbar/views/home/index.dart';
-import 'package:flutter_chat/pages/setting/index.dart';
+import 'package:flutter_chat/pages/tabbar/views/setting/index.dart';
 import 'package:flutter_chat/pages/tabbar/logic.dart';
 import 'package:flutter_chat/widgets/pop_scope.dart';
 import 'package:get/get.dart';

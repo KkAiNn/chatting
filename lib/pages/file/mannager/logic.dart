@@ -7,7 +7,7 @@ import 'package:flutter_chat/constants/customs/pickers/directory_file_asset_pick
 import 'package:flutter_chat/constants/customs/pickers/insta_asset_picker.dart';
 import 'package:flutter_chat/constants/customs/pickers/multi_tabs_assets_picker.dart';
 import 'package:flutter_chat/constants/extensions.dart';
-import 'package:flutter_chat/pages/tabbar/views/file/mannager/state.dart';
+import 'package:flutter_chat/pages/file/mannager/state.dart';
 import 'package:flutter_chat/utils/fileMannager/image.dart';
 import 'package:flutter_chat/constants/custom_pick_method.dart';
 import 'package:path_provider/path_provider.dart';

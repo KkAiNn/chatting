@@ -26,7 +26,7 @@ class SettingPage extends BaseCommonView<SettingLogic> {
   Widget buildContent() {
     return creatCommonView(
       logic,
-      (con) => MyPage(
+      (con) => Column(
         children: [
           const Text('setting Page'),
           AppCard(child: const Text('Api Page'), onTap: () {}),

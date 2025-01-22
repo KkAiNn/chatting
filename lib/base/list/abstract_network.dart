@@ -7,7 +7,7 @@ abstract mixin class AbstractListNetWork {
 
   /// 网络请求
   @protected
-  void getnetworkdata(Map<String, dynamic> info);
+  void getnetworkdata(Map<String, dynamic>? info);
 
   /// 下拉刷新
   void refreshData();
@@ -23,5 +23,5 @@ abstract class AbstractNetWork {
 
   /// 网络请求
   @protected
-  void getnetworkdata(Map<String, dynamic> info);
+  void getnetworkdata(Map<String, dynamic>? info);
 }

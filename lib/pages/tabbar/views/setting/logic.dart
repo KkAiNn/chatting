@@ -7,7 +7,6 @@ class SettingLogic extends BaseCommonController {
     netState = NetState.loadingState;
     Future.delayed(const Duration(seconds: 2), () {
       netState = NetState.dataSussessState;
-      print('data success');
       update();
     });
   }

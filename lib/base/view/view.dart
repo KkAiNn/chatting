@@ -1,9 +1,9 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-12-17 09:55:49
- * @LastEditTime: 2024-12-18 14:06:58
+ * @LastEditTime: 2025-01-21 18:29:43
  * @LastEditors: wurangkun
- * @FilePath: \flutter_chat\lib\base\view\view.dart
+ * @FilePath: \flutter-chat\lib\base\view\view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
@@ -106,7 +106,7 @@ abstract class BaseView<T> extends GetView<T> {
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.onInverseSurface,
         appBar: isHiddenNav == true ? null : buildAppBar(),
-        body: MyPage(children: [buildContent()]),
+        body: buildContent(),
       );
     }
 
@@ -118,7 +118,7 @@ abstract class BaseView<T> extends GetView<T> {
           top: true,
           child: Stack(
             children: [
-              MyPage(children: [buildContent()]),
+              MyPage(child: buildContent()),
               Positioned(top: 0, left: 0, right: 0, child: buildCustomAppBar()),
             ],
           ),

@@ -6,8 +6,10 @@
  * @FilePath: \flutter-chat\lib\routes\index.dart
  * @Description: 
  */
-import 'package:flutter_chat/pages/tabbar/views/file/mannager/binding.dart';
-import 'package:flutter_chat/pages/tabbar/views/file/mannager/index.dart';
+import 'package:flutter_chat/pages/chat/binding.dart';
+import 'package:flutter_chat/pages/chat/index.dart';
+import 'package:flutter_chat/pages/file/mannager/binding.dart';
+import 'package:flutter_chat/pages/file/mannager/index.dart';
 import 'package:flutter_chat/pages/login/binding.dart';
 import 'package:flutter_chat/pages/login/index.dart';
 import 'package:flutter_chat/pages/tabbar/binding.dart';
@@ -29,6 +31,8 @@ abstract class RouteName {
   static String DEMOLIST = '/list';
   static String FileManager = '/fileManager';
   static String ImageViewer = '/preview_image';
+
+  static String Chat = '/chat';
 }
 
 abstract class AppRouter {
@@ -66,6 +70,12 @@ abstract class AppRouter {
       name: RouteName.FileManager,
       page: () => FileMannagerPage(),
       binding: FileMannagerBinding(),
+      transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: RouteName.Chat,
+      page: () => ChatPage(),
+      binding: ChatBinding(),
       transition: Transition.rightToLeftWithFade,
     ),
     // GetPage(

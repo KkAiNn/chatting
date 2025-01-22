@@ -1,9 +1,9 @@
 /*
  * @Author: wurangkun
  * @Date: 2024-12-17 09:58:18
- * @LastEditTime: 2024-12-17 14:58:43
+ * @LastEditTime: 2025-01-21 09:51:34
  * @LastEditors: wurangkun
- * @FilePath: \flutter_chat\lib\base\view\common_view.dart
+ * @FilePath: \flutter-chat\lib\base\view\common_view.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';

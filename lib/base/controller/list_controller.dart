@@ -16,7 +16,7 @@ abstract class BaseListController extends BaseController
 
   /// 网络请求
   @override
-  void getnetworkdata(Map<String, dynamic> info) {}
+  void getnetworkdata(Map<String, dynamic>? info) {}
 
   /// 上拉加载
   @override
